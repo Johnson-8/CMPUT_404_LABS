@@ -11,6 +11,7 @@ def main():
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     
         #QUESTION 3
+        # set socket option, reuseaddress to true (1)
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         
         #bind socket to address
@@ -20,13 +21,15 @@ def main():
         
         #continuously listen for connections
         while True:
+            # instance of socket, IP of client
             conn, addr = s.accept()
             print("Connected by", addr)
             
             #recieve data, wait a bit, then send it back
+            #Q5 recieves data 
             full_data = conn.recv(BUFFER_SIZE)
             time.sleep(0.5)
-            conn.sendall(full_data)
+            conn.sendall(full_data) #sends data back
             conn.close()
 
 if __name__ == "__main__":

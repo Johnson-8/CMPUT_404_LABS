@@ -38,16 +38,15 @@ def send_data(serversocket, payload):
 def main():
     try:
         #define address info, payload, and buffer size
-        host = 'www.google.com'
-        port = 80
+        host = '127.0.0.1' # connect to local 127.0.0.1
+        port = 8001
         payload = f'GET / HTTP/1.0\r\nHost: {host}\r\n\r\n'
+        #payload = 'Hello there general kenobi'
         buffer_size = 4096
 
         #make the socket, get the ip, and connect
         s = create_tcp_socket()
-
         remote_ip = get_remote_ip(host)
-
         s.connect((remote_ip , port))
         print (f'Socket Connected to {host} on ip {remote_ip}')
         
@@ -62,12 +61,12 @@ def main():
             if not data:
                  break
             full_data += data
-        print(full_data)
+        print('Data received from proxy server:\n' + str(full_data, 'utf-8'))
     except Exception as e:
         print(e)
     finally:
         #always close at the end!
         s.close()
+
 if __name__ == "__main__":
     main()
-

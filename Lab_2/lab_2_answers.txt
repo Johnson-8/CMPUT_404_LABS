@@ -1,2 +1,20 @@
 Q1:
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+socket.AF_INET for IPv4 protocol
+socket.SOCK_STREAM for TCP connection
 
+Q2:
+Client socket intializes the connection.
+Server socket listens for client connection and binds to it.
+
+Q3:
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+For the current socket, socket.SO_REUSEADDR set value to 1 (=True) allows for reuse of bind port.
+
+Q4:
+For incoming connections we get infomation about the client's IP address and the port number they are using.
+
+Q5:
+A newline is sent after it is done sending the HTTP request.
+
+Q6:
