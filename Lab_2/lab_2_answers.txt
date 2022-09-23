@@ -18,3 +18,4 @@ Q5:
 A newline is sent after it is done sending the HTTP request.
 
 Q6:
+https://github.com/Johnson-8/CMPUT_404_LABS/tree/main/Lab_2

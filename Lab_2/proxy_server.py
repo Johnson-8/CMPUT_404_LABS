@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 import socket, sys
 import time
+from multiprocessing import Process
+import os
 
 def create_tcp_socket():
     print('Creating socket...')
@@ -46,18 +48,12 @@ def send_to_internet(payload):
         print(f'Proxy server connected to {PS_HOST} on ip {remote_ip}')
         
         # send the data and shutdown
-        send_data(s, payload)
+        s.sendall(payload)
         s.shutdown(socket.SHUT_WR)
         print(f'Data sent to {PS_HOST}')
 
-        # continue accepting data until no more left
-        full_data = b""
-        while True:
-            data = s.recv(buffer_size)
-            if not data:
-                break
-            full_data += data
-        return full_data
+        return_data = s.recv(buffer_size)
+        return return_data
 
     except Exception as e:
         print(e)
@@ -65,34 +61,48 @@ def send_to_internet(payload):
     finally:
         s.close()
 
-# define address & buffer size
-PC_HOST = ""
-PC_PORT = 8001
-PC_BUFFER_SIZE = 1024
+def mp_handler(pc_conn, addr):
+    print('parent process:', os.getppid(), '| process id:', os.getpid())
+
+    pc_full_data = pc_conn.recv(PC_BUFFER_SIZE)
+    if pc_full_data: print('Data received from proxy client')
+    #time.sleep(2)
+        
+    # sends pc data to server and get data to return back to pc
+    ps_return_data = send_to_internet(pc_full_data)
+    if ps_return_data: print('Data received from remote connection')
+    #time.sleep(2)
+
+    # sends data back to pc
+    print('Sending data back to client')
+    pc_conn.sendall(ps_return_data)
+    pc_conn.close()
+    
+# global variables
+PC_HOST = ""            # any client can connect
+PC_PORT = 8001          # listening to this port 
+PC_BUFFER_SIZE = 4096   #1024
 pc_full_data = b''
 
 def main():
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         print(f'Proxy server started, listening to port {PC_PORT}')
-
         # connects to client and bind
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         s.bind((PC_HOST, PC_PORT))
         s.listen(2)
         
-        #continuously listen for connections
+        # continuously listen for connections
         while True:
             # instance of socket, IP of client
-            conn, addr = s.accept()
+            pc_conn, addr = s.accept()
             print("Proxy server connected by", addr)
             
-            #recieve data, wait a bit, then send it back
-            pc_full_data = conn.recv(PC_BUFFER_SIZE)
-            time.sleep(1)
-            # sends pc data to server and get data to return back to pc
-            ps_return_data = send_to_internet(pc_full_data)
-            conn.sendall(ps_return_data) #sends data back
-            conn.close()
+            # multiprocessing to handle more than one proxy client
+            p = Process(target=mp_handler, args=(pc_conn, addr))
+            p.daemon = True
+            p.start()
+            pc_conn.close()            
 
 if __name__ == "__main__":
     main()
