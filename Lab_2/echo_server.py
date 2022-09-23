@@ -2,6 +2,7 @@
 import socket
 import time
 from multiprocessing import Process
+import os
 
 #define address & buffer size
 HOST = ""
