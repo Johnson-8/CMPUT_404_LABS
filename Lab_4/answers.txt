@@ -1,0 +1,21 @@
+Q1:
+https://github.com/Johnson-8/CMPUT_404_LABS/tree/main/Lab_4/mysite
+
+Q2:
+The default Django web page.
+
+Q3:
+404 page
+Hello, world. You're at the polls index.
+
+Q4:
+Make changes to the DB based on changes our models.
+
+Q5:
+Admin page allowing you to modify polls. Click the "+ Add" button to add custom models.
+
+Q6:
+
+Q7:
+
+Q8:
