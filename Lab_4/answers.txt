@@ -15,7 +15,12 @@ Q5:
 Admin page allowing you to modify polls. Click the "+ Add" button to add custom models.
 
 Q6:
+Text telling me which section of the poll I am in. 
+404 error.
+Change int to str.
 
 Q7:
+The urls can change later on.
 
 Q8:
+Scalability.
