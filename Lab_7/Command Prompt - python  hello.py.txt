@@ -1,0 +1,306 @@
+Microsoft Windows [Version 10.0.19044.2130]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>dir
+ Volume in drive C is Windows
+ Volume Serial Number is 3E78-6407
+
+ Directory of C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7
+
+2022-10-24  04:56 PM    <DIR>          .
+2022-10-24  04:56 PM    <DIR>          ..
+               0 File(s)              0 bytes
+               2 Dir(s)  81,771,700,224 bytes free
+
+C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>python -m virtualenv venv --python=python3
+created virtual environment CPython3.9.13.final.0-64 in 8523ms
+  creator Venv(dest=C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7\venv, clear=False, no_vcs_ignore=False, global=False, describe=CPython3Windows)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=C:\Users\Johnson\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\Local\pypa\virtualenv)
+    added seed packages: pip==22.2.2, setuptools==65.4.1, wheel==0.37.1
+  activators BashActivator,BatchActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+
+C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>venv/Scripts/activate
+'venv' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>dir
+ Volume in drive C is Windows
+ Volume Serial Number is 3E78-6407
+
+ Directory of C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7
+
+2022-10-24  04:57 PM    <DIR>          .
+2022-10-24  04:57 PM    <DIR>          ..
+2022-10-24  04:57 PM    <DIR>          venv
+               0 File(s)              0 bytes
+               3 Dir(s)  81,745,981,440 bytes free
+
+C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>venv\Scripts\activate
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>pip install Flask
+Collecting Flask
+  Downloading Flask-2.2.2-py3-none-any.whl (101 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 101.5/101.5 kB 1.9 MB/s eta 0:00:00Collecting importlib-metadata>=3.6.0
+  Using cached importlib_metadata-5.0.0-py3-none-any.whl (21 kB)
+Collecting Werkzeug>=2.2.2
+  Downloading Werkzeug-2.2.2-py3-none-any.whl (232 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 232.7/232.7 kB 3.6 MB/s eta 0:00:00Collecting Jinja2>=3.0
+  Using cached Jinja2-3.1.2-py3-none-any.whl (133 kB)
+Collecting itsdangerous>=2.0
+  Downloading itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+Collecting click>=8.0
+  Downloading click-8.1.3-py3-none-any.whl (96 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 kB 5.4 MB/s eta 0:00:00Collecting colorama
+  Downloading colorama-0.4.5-py2.py3-none-any.whl (16 kB)
+Collecting zipp>=0.5
+  Downloading zipp-3.10.0-py3-none-any.whl (6.2 kB)
+Collecting MarkupSafe>=2.0
+  Using cached MarkupSafe-2.1.1-cp39-cp39-win_amd64.whl (17 kB)
+Installing collected packages: zipp, MarkupSafe, itsdangerous, colorama, Werkzeug, Jinja2, importlib-metadata, click, Flask
+Successfully installed Flask-2.2.2 Jinja2-3.1.2 MarkupSafe-2.1.1 Werkzeug-2.2.2 click-8.1.3 colorama-0.4.5 importlib-metadata-5.0.0 itsdangerous-2.1.2 zipp-3.10.0
+
+[notice] A new release of pip available: 22.2.2 -> 22.3
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>notepad hello.py
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>code .
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>python3 hello.py
+Traceback (most recent call last):
+  File "C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7\hello.py", line 3, in <module>
+    from flask import Flask
+ModuleNotFoundError: No module named 'flask'
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>pip install Flask
+Requirement already satisfied: Flask in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (2.2.2)
+Requirement already satisfied: click>=8.0 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from Flask) (8.1.3)
+Requirement already satisfied: itsdangerous>=2.0 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from Flask) (2.1.2)
+Requirement already satisfied: Werkzeug>=2.2.2 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from Flask) (2.2.2)
+Requirement already satisfied: importlib-metadata>=3.6.0 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from Flask) (5.0.0)
+Requirement already satisfied: Jinja2>=3.0 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from Flask) (3.1.2)
+Requirement already satisfied: colorama in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from click>=8.0->Flask) (0.4.5)
+Requirement already satisfied: zipp>=0.5 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from importlib-metadata>=3.6.0->Flask) (3.10.0)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from Jinja2>=3.0->Flask) (2.1.1)
+[notice] A new release of pip available: 22.2.2 -> 22.3
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>python3 hello.py
+Traceback (most recent call last):
+  File "C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7\hello.py", line 3, in <module>
+    from flask import Flask
+ModuleNotFoundError: No module named 'flask'
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>pip install flask
+Requirement already satisfied: flask in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (2.2.2)
+Requirement already satisfied: click>=8.0 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from flask) (8.1.3)
+Requirement already satisfied: Werkzeug>=2.2.2 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from flask) (2.2.2)
+Requirement already satisfied: Jinja2>=3.0 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from flask) (3.1.2)
+Requirement already satisfied: importlib-metadata>=3.6.0 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from flask) (5.0.0)
+Requirement already satisfied: itsdangerous>=2.0 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from flask) (2.1.2)
+Requirement already satisfied: colorama in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from click>=8.0->flask) (0.4.5)
+Requirement already satisfied: zipp>=0.5 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from importlib-metadata>=3.6.0->flask) (3.10.0)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from Jinja2>=3.0->flask) (2.1.1)
+[notice] A new release of pip available: 22.2.2 -> 22.3
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>python3 hello.py
+Traceback (most recent call last):
+  File "C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7\hello.py", line 3, in <module>
+    from flask import Flask
+ModuleNotFoundError: No module named 'flask'
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>python3 hello.py
+Traceback (most recent call last):
+  File "C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7\hello.py", line 2, in <module>
+    from flask import Flask
+ModuleNotFoundError: No module named 'flask'
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>python hello.py
+ * Serving Flask app 'hello'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 431-689-525
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>python3 hello.py
+Traceback (most recent call last):
+  File "C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7\hello.py", line 3, in <module>
+    from flask import Flask
+ModuleNotFoundError: No module named 'flask'
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>python hello.py
+ * Serving Flask app 'hello'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 431-689-525
+127.0.0.1 - - [24/Oct/2022 17:34:50] "GET / HTTP/1.1" 200 -
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>pip install flask_restful
+Collecting flask_restful
+  Downloading Flask_RESTful-0.3.9-py2.py3-none-any.whl (25 kB)
+Collecting six>=1.3.0
+  Using cached six-1.16.0-py2.py3-none-any.whl (11 kB)
+Collecting pytz
+  Using cached pytz-2022.5-py2.py3-none-any.whl (500 kB)
+Collecting aniso8601>=0.82
+  Downloading aniso8601-9.0.1-py2.py3-none-any.whl (52 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.8/52.8 kB 1.4 MB/s eta 0:00:00Requirement already satisfied: Flask>=0.8 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from flask_restful) (2.2.2)
+Requirement already satisfied: click>=8.0 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from Flask>=0.8->flask_restful) (8.1.3)
+Requirement already satisfied: importlib-metadata>=3.6.0 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from Flask>=0.8->flask_restful) (5.0.0)
+Requirement already satisfied: Werkzeug>=2.2.2 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from Flask>=0.8->flask_restful) (2.2.2)
+Requirement already satisfied: Jinja2>=3.0 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from Flask>=0.8->flask_restful) (3.1.2)
+Requirement already satisfied: itsdangerous>=2.0 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from Flask>=0.8->flask_restful) (2.1.2)
+Requirement already satisfied: colorama in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from click>=8.0->Flask>=0.8->flask_restful) (0.4.5)
+Requirement already satisfied: zipp>=0.5 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from importlib-metadata>=3.6.0->Flask>=0.8->flask_restful) (3.10.0)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from Jinja2>=3.0->Flask>=0.8->flask_restful) (2.1.1)
+Installing collected packages: pytz, aniso8601, six, flask_restful
+Successfully installed aniso8601-9.0.1 flask_restful-0.3.9 pytz-2022.5 six-1.16.0
+
+[notice] A new release of pip available: 22.2.2 -> 22.3
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>python hello.py
+Traceback (most recent call last):
+  File "C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7\hello.py", line 4, in <module>
+    from flask_restful import Resource, application
+ImportError: cannot import name 'application' from 'flask_restful' (C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7\venv\lib\site-packages\flask_restful\__init__.py)
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>python hello.py
+Traceback (most recent call last):
+  File "C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7\hello.py", line 13, in <module>
+    api.add_resource(HelloWorld(), '/')
+  File "C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7\venv\lib\site-packages\flask_restful\__init__.py", line 391, in add_resource
+    self._register_view(self.app, resource, *urls, **kwargs)
+  File "C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7\venv\lib\site-packages\flask_restful\__init__.py", line 416, in _register_view
+    endpoint = kwargs.pop('endpoint', None) or resource.__name__.lower()
+AttributeError: 'HelloWorld' object has no attribute '__name__'
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>python hello.py
+ * Serving Flask app 'hello'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 431-689-525
+127.0.0.1 - - [24/Oct/2022 17:43:26] "GET / HTTP/1.1" 200 -
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>python hello.py
+Traceback (most recent call last):
+  File "C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7\hello.py", line 60, in <module>
+    api.add_resource(Todo, 'todos/<int:todo_id>')
+  File "C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7\venv\lib\site-packages\flask_restful\__init__.py", line 391, in add_resource
+    self._register_view(self.app, resource, *urls, **kwargs)
+  File "C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7\venv\lib\site-packages\flask_restful\__init__.py", line 457, in _register_view
+    app.add_url_rule(rule, view_func=resource_func, **kwargs)
+  File "C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7\venv\lib\site-packages\flask\scaffold.py", line50, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7\venv\lib\site-packages\flask\app.py", line 1351, in add_url_rule
+    rule = self.url_rule_class(rule, methods=methods, **options)
+  File "C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7\venv\lib\site-packages\werkzeug\routing\rules.py", line 454, in __init__
+    raise ValueError("urls must start with a leading slash")
+ValueError: urls must start with a leading slash
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>python hello.py
+ * Serving Flask app 'hello'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 431-689-525
+127.0.0.1 - - [24/Oct/2022 18:08:47] "GET /todos HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2022 18:08:54] "GET /todos/3 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2022 18:09:28] "DELETE /todos/2 HTTP/1.1" 204 -
+127.0.0.1 - - [24/Oct/2022 18:09:47] "GET /todos HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2022 18:12:24] "POST /todos HTTP/1.1" 400 -
+127.0.0.1 - - [24/Oct/2022 18:13:55] "POST /todos HTTP/1.1" 400 -
+127.0.0.1 - - [24/Oct/2022 18:14:24] "POST /todos HTTP/1.1" 400 -
+127.0.0.1 - - [24/Oct/2022 18:15:20] "POST /todos HTTP/1.1" 400 -
+127.0.0.1 - - [24/Oct/2022 18:15:44] "POST /todos HTTP/1.1" 400 -
+127.0.0.1 - - [24/Oct/2022 18:16:48] "POST /todos HTTP/1.1" 400 -
+127.0.0.1 - - [24/Oct/2022 18:17:25] "POST /todos HTTP/1.1" 400 -
+127.0.0.1 - - [24/Oct/2022 18:17:42] "POST /todos HTTP/1.1" 400 -
+127.0.0.1 - - [24/Oct/2022 18:18:37] "POST /todos HTTP/1.1" 400 -
+127.0.0.1 - - [24/Oct/2022 18:18:57] "POST /todos HTTP/1.1" 201 -
+127.0.0.1 - - [24/Oct/2022 18:20:07] "GET /todos HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2022 18:20:32] "PUT /todos/3 HTTP/1.1" 400 -
+127.0.0.1 - - [24/Oct/2022 18:21:27] "PUT /todos/3 HTTP/1.1" 201 -
+127.0.0.1 - - [24/Oct/2022 18:21:38] "GET /todos HTTP/1.1" 200 -
+ * Detected change in 'C:\\Users\\Johnson\\Desktop\\CMPUT_404\\Labs\\Lab_7\\hello.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 431-689-525
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>pip install httpie
+Collecting httpie
+  Downloading httpie-3.2.1-py3-none-any.whl (124 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 125.0/125.0 kB 1.8 MB/s eta 0:00:00Collecting rich>=9.10.0
+  Using cached rich-12.6.0-py3-none-any.whl (237 kB)
+Collecting requests[socks]>=2.22.0
+  Using cached requests-2.28.1-py3-none-any.whl (62 kB)
+Collecting charset-normalizer>=2.0.0
+  Downloading charset_normalizer-3.0.0-cp39-cp39-win_amd64.whl (96 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.3/96.3 kB 2.8 MB/s eta 0:00:00Requirement already satisfied: setuptools in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from httpie)(65.4.1)
+Requirement already satisfied: pip in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from httpie) (22.2.2)
+Collecting defusedxml>=0.6.0
+  Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+Requirement already satisfied: colorama>=0.2.4 in c:\users\johnson\desktop\cmput_404\labs\lab_7\venv\lib\site-packages (from httpie) (0.4.5)
+Collecting requests-toolbelt>=0.9.1
+  Downloading requests_toolbelt-0.10.0-py2.py3-none-any.whl (54 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.4/54.4 kB 2.9 MB/s eta 0:00:00Collecting multidict>=4.7.0
+  Downloading multidict-6.0.2-cp39-cp39-win_amd64.whl (28 kB)
+Collecting Pygments>=2.5.2
+  Using cached Pygments-2.13.0-py3-none-any.whl (1.1 MB)
+Collecting idna<4,>=2.5
+  Using cached idna-3.4-py3-none-any.whl (61 kB)
+Collecting urllib3<1.27,>=1.21.1
+  Using cached urllib3-1.26.12-py2.py3-none-any.whl (140 kB)
+Collecting charset-normalizer>=2.0.0
+  Using cached charset_normalizer-2.1.1-py3-none-any.whl (39 kB)
+Collecting certifi>=2017.4.17
+  Downloading certifi-2022.9.24-py3-none-any.whl (161 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 161.1/161.1 kB 3.2 MB/s eta 0:00:00Collecting PySocks!=1.5.7,>=1.5.6
+  Downloading PySocks-1.7.1-py3-none-any.whl (16 kB)
+Collecting commonmark<0.10.0,>=0.9.0
+  Using cached commonmark-0.9.1-py2.py3-none-any.whl (51 kB)
+Installing collected packages: commonmark, urllib3, PySocks, Pygments, multidict, idna, defusedxml, charset-normalizer, certifi, rich, requests, requests-toolbelt, httpie
+Successfully installed PySocks-1.7.1 Pygments-2.13.0 certifi-2022.9.24 charset-normalizer-2.1.1 commonmark-0.9.1 defusedxml-0.7.1 httpie-3.2.1 idna-3.4 multidict-6.0.2 requests-2.28.1 requests-toolbelt-0.10.0 rich-12.6.0 urllib3-1.26.12
+
+[notice] A new release of pip available: 22.2.2 -> 22.3
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>http :5000
+
+http: error: ConnectionError: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000224A66C7B20>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')) while doing a GET request to URL: http://localhost:5000/
+
+
+
+(venv) C:\Users\Johnson\Desktop\CMPUT_404\Labs\Lab_7>python hello.py
+ * Serving Flask app 'hello'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 431-689-525
+127.0.0.1 - - [24/Oct/2022 18:27:28] "GET / HTTP/1.1" 404 -
+127.0.0.1 - - [24/Oct/2022 18:28:29] "GET /todos HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2022 18:29:05] "GET /todos HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2022 18:29:30] "HEAD /todos HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2022 18:29:56] "HEAD /todos HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2022 18:30:58] "HEAD /todos HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2022 18:31:08] "GET /todos HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2022 18:32:33] "POST /todos HTTP/1.1" 201 -
+127.0.0.1 - - [24/Oct/2022 18:32:39] "GET /todos HTTP/1.1" 200 -

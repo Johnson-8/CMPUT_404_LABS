@@ -1,0 +1,18 @@
+Q0:
+
+
+Q1:
+Everything can be done in one file in Flask. You have to implement more things on your own. Data storage is just stored in a variable, you'd have to implement your own database for storing data while Django creates a database for you to store data when you make the project. This make Flask more lightweight than Django.
+
+Q2:
+
+
+Q3:
+
+Q4:
+
+Q5:
+
+Q6:
+
+Q7:
